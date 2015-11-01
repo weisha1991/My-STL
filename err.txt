@@ -1,0 +1,69 @@
+In file included from /usr/include/c++/5/initializer_list:36:0,
+                 from Vector.h:11,
+                 from Hashtable.h:10,
+                 from hashtable_test.h:7,
+                 from main.cpp:15:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from Hashtable.h:10:0,
+                 from hashtable_test.h:7,
+                 from main.cpp:15:
+Vector.h:29:38: error: declaration of ‘typedef class My_STL::reverse_iterator<T*> My_STL::vector<T, Alloc>::reverse_iterator’ [-fpermissive]
+   typedef reverse_iterator<iterator> reverse_iterator;
+                                      ^
+In file included from Vector.h:7:0,
+                 from Hashtable.h:10,
+                 from hashtable_test.h:7,
+                 from main.cpp:15:
+ReverseIterator.h:8:8: error: changes meaning of ‘reverse_iterator’ from ‘class My_STL::reverse_iterator<T*>’ [-fpermissive]
+  class reverse_iterator{
+        ^
+In file included from Hashtable.h:10:0,
+                 from hashtable_test.h:7,
+                 from main.cpp:15:
+Vector.h:72:31: error: expected ‘)’ before ‘<’ token
+   vector(std::initializer_list<value_type> il);
+                               ^
+Vector.h:228:26: error: expected constructor, destructor, or type conversion before ‘(’ token
+  vector<T, Alloc>::vector(std::initializer_list<value_type> il) {
+                          ^
+In file included from hashtable_test.h:7:0,
+                 from main.cpp:15:
+Hashtable.h:33:66: error: declaration of ‘typedef class My_STL::hashtable<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc> My_STL::_hashtable_iterator<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc>::hashtable’ [-fpermissive]
+   typedef hashtable<Value,Key,Hashfun,ExtractKey,EqualKey,Alloc> hashtable;
+                                                                  ^
+Hashtable.h:22:8: error: changes meaning of ‘hashtable’ from ‘class My_STL::hashtable<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc>’ [-fpermissive]
+  class hashtable;
+        ^
+Hashtable.h:58:73: error: declaration of ‘typedef class My_STL::hashtable<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc> My_STL::_hashtable_const_iterator<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc>::hashtable’ [-fpermissive]
+    typedef hashtable<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc>  hashtable;
+                                                                         ^
+Hashtable.h:22:8: error: changes meaning of ‘hashtable’ from ‘class My_STL::hashtable<Value, Key, Hashfun, ExtractKey, EqualKey, Alloc>’ [-fpermissive]
+  class hashtable;
+        ^
+In file included from hashtable_test.h:7:0,
+                 from main.cpp:15:
+Hashtable.h:357:61: error: default template arguments may not be used in function templates without -std=c++11 or -std=gnu++11
+    const hashtable<Value,Key,ExtractKey,EqualKey,Alloc> &rhs){
+                                                             ^
+In file included from main.cpp:15:0:
+hashtable_test.h: In function ‘void hashtable_tes::hashtable_tes()’:
+hashtable_test.h:15:57: error: ‘>>’ should be ‘> >’ within a nested template argument list
+   hashtable<int,int,hash<int>,identity<int>,equal_to<int>> ht(100,hash<int>(),equal_to<int>());
+                                                         ^
+hashtable_test.h:35:8: error: ‘pii’ does not name a type
+   auto pii=ht.equal_range(12);
+        ^
+hashtable_test.h:36:10: error: ‘pii’ was not declared in this scope
+   cout<<*pii.first<<" "<<*(pii.second)<<endl;
+          ^
+hashtable_test.h:37:37: error: in C++98 ‘ivec’ must be initialized by constructor, not by ‘{...}’
+   My_STL::vector<int> ivec={21,39,48};
+                                     ^
+hashtable_test.h:37:37: error: could not convert ‘{21, 39, 48}’ from ‘<brace-enclosed initializer list>’ to ‘My_STL::vector<int>’
+hashtable_test.h:41:44: error: in C++98 ‘ivec1’ must be initialized by constructor, not by ‘{...}’
+   My_STL::vector<int> ivec1={11,12,13,14,15};
+                                            ^
+hashtable_test.h:41:44: error: could not convert ‘{11, 12, 13, 14, 15}’ from ‘<brace-enclosed initializer list>’ to ‘My_STL::vector<int>’
+make: *** [main.o] Error 1
